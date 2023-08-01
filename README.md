@@ -4,6 +4,17 @@
 
 ![支持设备](https://img.shields.io/badge/支持设备:-blueviolet.svg?style=flat-square) ![H88K](https://img.shields.io/badge/H88K-blue.svg?style=flat-square) ![H66K](https://img.shields.io/badge/H66K-blue.svg?style=flat-square) ![H68K](https://img.shields.io/badge/H68K-blue.svg?style=flat-square) ![H69K](https://img.shields.io/badge/H69K-blue.svg?style=flat-square) ![R5S](https://img.shields.io/badge/R5S-blue.svg?style=flat-square) ![R6S](https://img.shields.io/badge/R6S-blue.svg?style=flat-square) ![R66S](https://img.shields.io/badge/R66S-blue.svg?style=flat-square) ![R68S](https://img.shields.io/badge/R68S-blue.svg?style=flat-square) ![STATION P2](https://img.shields.io/badge/STATION%20P2-blue.svg?style=flat-square) ![T68M](https://img.shields.io/badge/T68M-blue.svg?style=flat-square)
 
+## 功能特性
+- 移除 ddns 和 ddnsto
+- 移除 istore os 页面
+- 移除 易有云
+- 移除 uhttpd
+- 移除 bootstrap 主题
+- 添加 ddns-go
+- 添加 文件管理
+- 添加 关机
+- 添加 nginx
+
 ## 默认配置
 
 - IP: `http://10.0.0.1` or `http://iStoreOS.lan/`
