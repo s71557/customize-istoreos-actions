@@ -30,17 +30,36 @@ sed -i 's/CONFIG_TARGET_ROOTFS_PARTSIZE=256/CONFIG_TARGET_ROOTFS_PARTSIZE=2048/'
 # ' >> .config
 
 # 移除 ddns 和 ddnsto
-sed -i '/ddns/s/^/#/' >> .config
+sed -i 's/CONFIG_PACKAGE_ddns-scripts=y/# CONFIG_PACKAGE_ddns-scripts=y/' .config
+sed -i 's/CONFIG_PACKAGE_ddns-scripts-cloudflare=y/# CONFIG_PACKAGE_ddns-scripts-cloudflare=y/' .config
+sed -i 's/CONFIG_PACKAGE_ddns-scripts-dnspod=y/# CONFIG_PACKAGE_ddns-scripts-dnspod=y/' .config
+sed -i 's/CONFIG_PACKAGE_ddns-scripts-services=y/# CONFIG_PACKAGE_ddns-scripts-services=y/' .config
+sed -i 's/CONFIG_PACKAGE_ddns-scripts_aliyun=y/# CONFIG_PACKAGE_ddns-scripts_aliyun=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-ddns=y/# CONFIG_PACKAGE_luci-app-ddns=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y/' .config
+
+sed -i 's/CONFIG_PACKAGE_ddnsto=y/# CONFIG_PACKAGE_ddnsto=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-ddnsto=y/# CONFIG_PACKAGE_CONFIG_PACKAGE_luci-app-ddnsto=y/' .config
+
 
 # 移除 istore os 页面
-sed -i '/quickstart/s/^/#/' >> .config
+sed -i 's/CONFIG_PACKAGE_quickstart=y/# CONFIG_PACKAGE_quickstart=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-quickstart=y/# CONFIG_PACKAGE_luci-app-quickstart=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-quickstart-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-quickstart-zh-cn=y/' .config
 
 # 移除 易有云
-sed -i '/linkease/s/^/#/' >> .config
+sed -i 's/CONFIG_PACKAGE_linkease=y/# CONFIG_PACKAGE_linkease=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-linkease=y/# CONFIG_PACKAGE_luci-app-linkease=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-linkease-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-linkease-zh-cn=y/' .config
+
+sed -i 's/CONFIG_PACKAGE_ddnsto=y/# CONFIG_PACKAGE_ddnsto=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-ddnsto=y/# CONFIG_PACKAGE_luci-app-ddnsto=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/' .config
 
 # 移除 uhttpd
-sed -i '/uhttpd/s/^/#/' >> .config
-sed -i '/libiwinfo-lua/s/^/#/' >> .config
+sed -i 's/CONFIG_PACKAGE_uhttpd=y/# CONFIG_PACKAGE_uhttpd=y/' .config
+sed -i 's/CONFIG_PACKAGE_uhttpd-mod-ubus=y/# CONFIG_PACKAGE_uhttpd-mod-ubus=y/' .config
+sed -i 's/CONFIG_PACKAGE_libiwinfo-lua=y/# CONFIG_PACKAGE_libiwinfo-lua=y/' .config
 sed -i 's/CONFIG_PACKAGE_luci-ssl-openssl=y/CONFIG_PACKAGE_luci-ssl-openssl=n/' .config
 
 # 移除 bootstrap 主题
