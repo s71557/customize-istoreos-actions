@@ -11,7 +11,6 @@
 - 移除 易有云
 - 移除 uhttpd
 - 移除 bootstrap 主题
-- 移除 docker
 - 添加 ddns-go
 - 添加 文件管理
 - 添加 关机

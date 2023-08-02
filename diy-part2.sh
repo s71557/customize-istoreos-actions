@@ -58,17 +58,6 @@ sed -i 's/CONFIG_PACKAGE_luci-ssl-openssl=y/CONFIG_PACKAGE_luci-ssl-openssl=n/' 
 # 移除 bootstrap 主题
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
 
-# 移除 docker
-sed -i 's/CONFIG_PACKAGE_docker=y/# CONFIG_PACKAGE_docker=y/' .config
-sed -i 's/CONFIG_PACKAGE_dockerd=y/# CONFIG_PACKAGE_dockerd=y/' .config
-sed -i 's/CONFIG_DOCKER_NET_ENCRYPT=y/# CONFIG_DOCKER_NET_ENCRYPT=y/' .config
-sed -i 's/CONFIG_DOCKER_NET_MACVLAN=y/# CONFIG_DOCKER_NET_MACVLAN=y/' .config
-sed -i 's/CONFIG_DOCKER_NET_OVERLAY=y/# CONFIG_DOCKER_NET_OVERLAY=y/' .config
-sed -i 's/CONFIG_DOCKER_NET_TFTP=y/# CONFIG_DOCKER_NET_TFTP=y/' .config
-sed -i 's/CONFIG_PACKAGE_luci-app-dockerman=y/# CONFIG_PACKAGE_luci-app-dockerman=y/' .config
-sed -i 's/CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=y/' .config
-sed -i 's/CONFIG_PACKAGE_luci-lib-docker=y/# CONFIG_PACKAGE_luci-lib-docker=y/' .config
-
 # 添加 ddns-go
 echo "
 CONFIG_PACKAGE_filebrowser=y
