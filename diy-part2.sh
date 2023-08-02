@@ -19,13 +19,6 @@ sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 # ttyd 自动登录
 # sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${GITHUB_WORKSPACE}/openwrt/package/feeds/packages/ttyd/files/ttyd.config
 
-# 添加自定义软件包
-# echo '
-# CONFIG_PACKAGE_luci-app-mosdns=y
-# CONFIG_PACKAGE_luci-app-adguardhome=y
-# CONFIG_PACKAGE_luci-app-openclash=y
-# ' >> .config
-
 # 移除 ddns 和 ddnsto
 sed -i 's/CONFIG_PACKAGE_ddns-scripts=y/# CONFIG_PACKAGE_ddns-scripts=y/' .config
 sed -i 's/CONFIG_PACKAGE_ddns-scripts-cloudflare=y/# CONFIG_PACKAGE_ddns-scripts-cloudflare=y/' .config
@@ -58,16 +51,27 @@ sed -i 's/CONFIG_PACKAGE_luci-ssl-openssl=y/CONFIG_PACKAGE_luci-ssl-openssl=n/' 
 # 移除 bootstrap 主题
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
 
+mkdir package/community
+pushd package/community
+
+svn co https://github.com/kiddin9/openwrt-packages/branches/master/ca-bundle
+svn co https://github.com/kiddin9/openwrt-packages/branches/master/luci-app-ddns-go
+
+svn co https://github.com/kiddin9/openwrt-packages/branches/master/filebrowser
+svn co https://github.com/kiddin9/openwrt-packages/branches/master/luci-app-filebrowser
+
+popd
+
 # 添加 ddns-go
 echo "
-CONFIG_PACKAGE_filebrowser=y
+CONFIG_PACKAGE_ca-bundle=y
 CONFIG_PACKAGE_luci-app-ddns-go=y
 CONFIG_PACKAGE_luci-i18n-ddns-go-zh-cn=y
 " >> .config
 
 # 添加 文件管理
 echo "
-CONFIG_PACKAGE_ca-bundle=y
+CONFIG_PACKAGE_filebrowser=y
 CONFIG_PACKAGE_luci-app-filebrowser=y
 CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y
 " >> .config

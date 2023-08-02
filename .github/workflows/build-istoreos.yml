@@ -107,7 +107,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: 更新 feeds
-      run: cd openwrt && ./scripts/feeds update -a && rm -rf feeds/kiddin9/{shortcut-fe, quectel_SRPD_PCIE}
+      run: cd openwrt && ./scripts/feeds update -a
 
     - name: 安装 feeds
       run: cd openwrt && ./scripts/feeds install -a
