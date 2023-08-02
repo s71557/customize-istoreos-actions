@@ -11,10 +11,7 @@
 #
 
 # 修改openwrt登陆地址,把下面的 10.0.0.1 修改成你想要的就可以了
-sed -i 's/192.168.100.1/10.0.0.1/g' package/base-files/files/bin/config_generate
-
-# 修改 根目录(Overlay) 容量
-sed -i 's/CONFIG_TARGET_ROOTFS_PARTSIZE=256/CONFIG_TARGET_ROOTFS_PARTSIZE=2048/' .config
+sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # 修改主机名字，把 iStore OS 修改你喜欢的就行（不能纯数字或者使用中文）
 # sed -i 's/OpenWrt/iStore OS/g' package/base-files/files/bin/config_generate
@@ -38,10 +35,6 @@ sed -i 's/CONFIG_PACKAGE_ddns-scripts_aliyun=y/# CONFIG_PACKAGE_ddns-scripts_ali
 sed -i 's/CONFIG_PACKAGE_luci-app-ddns=y/# CONFIG_PACKAGE_luci-app-ddns=y/' .config
 sed -i 's/CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y/' .config
 
-sed -i 's/CONFIG_PACKAGE_ddnsto=y/# CONFIG_PACKAGE_ddnsto=y/' .config
-sed -i 's/CONFIG_PACKAGE_luci-app-ddnsto=y/# CONFIG_PACKAGE_CONFIG_PACKAGE_luci-app-ddnsto=y/' .config
-
-
 # 移除 istore os 页面
 sed -i 's/CONFIG_PACKAGE_quickstart=y/# CONFIG_PACKAGE_quickstart=y/' .config
 sed -i 's/CONFIG_PACKAGE_luci-app-quickstart=y/# CONFIG_PACKAGE_luci-app-quickstart=y/' .config
@@ -57,19 +50,24 @@ sed -i 's/CONFIG_PACKAGE_luci-app-ddnsto=y/# CONFIG_PACKAGE_luci-app-ddnsto=y/' 
 sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/' .config
 
 # 移除 uhttpd
-sed -i 's/CONFIG_PACKAGE_uhttpd=y/# CONFIG_PACKAGE_uhttpd=y/' .config
-sed -i 's/CONFIG_PACKAGE_uhttpd-mod-ubus=y/# CONFIG_PACKAGE_uhttpd-mod-ubus=y/' .config
-sed -i 's/CONFIG_PACKAGE_libiwinfo-lua=y/# CONFIG_PACKAGE_libiwinfo-lua=y/' .config
+sed -i 's/CONFIG_PACKAGE_uhttpd=y/CONFIG_PACKAGE_uhttpd=n/' .config
+sed -i 's/CONFIG_PACKAGE_uhttpd-mod-ubus=y/CONFIG_PACKAGE_uhttpd-mod-ubus=n/' .config
+sed -i 's/CONFIG_PACKAGE_libiwinfo-lua=y/CONFIG_PACKAGE_libiwinfo-lua=n/' .config
 sed -i 's/CONFIG_PACKAGE_luci-ssl-openssl=y/CONFIG_PACKAGE_luci-ssl-openssl=n/' .config
 
 # 移除 bootstrap 主题
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
 
-# 添加 ddns-go
-echo "
-CONFIG_PACKAGE_luci-app-ddns-go=y
-CONFIG_PACKAGE_luci-i18n-ddns-go-zh-cn=y
-" >> .config
+# 移除 docker
+sed -i 's/CONFIG_PACKAGE_docker=y/# CONFIG_PACKAGE_docker=y/' .config
+sed -i 's/CONFIG_PACKAGE_dockerd=y/# CONFIG_PACKAGE_dockerd=y/' .config
+sed -i 's/CONFIG_DOCKER_NET_ENCRYPT=y/# CONFIG_DOCKER_NET_ENCRYPT=y/' .config
+sed -i 's/CONFIG_DOCKER_NET_MACVLAN=y/# CONFIG_DOCKER_NET_MACVLAN=y/' .config
+sed -i 's/CONFIG_DOCKER_NET_OVERLAY=y/# CONFIG_DOCKER_NET_OVERLAY=y/' .config
+sed -i 's/CONFIG_DOCKER_NET_TFTP=y/# CONFIG_DOCKER_NET_TFTP=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-dockerman=y/# CONFIG_PACKAGE_luci-app-dockerman=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-lib-docker=y/# CONFIG_PACKAGE_luci-lib-docker=y/' .config
 
 # 添加 文件管理
 echo "
@@ -117,6 +115,7 @@ CONFIG_NGINX_HTTP_UWSGI=y
 CONFIG_NGINX_HTTP_V2=y
 CONFIG_NGINX_PCRE=y
 
+CONFIG_PACKAGE_luci-nginx=y
 CONFIG_PACKAGE_luci-ssl-nginx=y
 CONFIG_PACKAGE_musl-fts=m
 CONFIG_PACKAGE_my-default-settings=y
