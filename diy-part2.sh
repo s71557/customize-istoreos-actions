@@ -69,8 +69,16 @@ sed -i 's/CONFIG_PACKAGE_luci-app-dockerman=y/# CONFIG_PACKAGE_luci-app-dockerma
 sed -i 's/CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=y/' .config
 sed -i 's/CONFIG_PACKAGE_luci-lib-docker=y/# CONFIG_PACKAGE_luci-lib-docker=y/' .config
 
+# 添加 ddns-go
+echo "
+CONFIG_PACKAGE_filebrowser=y
+CONFIG_PACKAGE_luci-app-ddns-go=y
+CONFIG_PACKAGE_luci-i18n-ddns-go-zh-cn=y
+" >> .config
+
 # 添加 文件管理
 echo "
+CONFIG_PACKAGE_ca-bundle=y
 CONFIG_PACKAGE_luci-app-filebrowser=y
 CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y
 " >> .config
