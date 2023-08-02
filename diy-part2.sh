@@ -51,15 +51,6 @@ sed -i 's/CONFIG_PACKAGE_luci-ssl-openssl=y/CONFIG_PACKAGE_luci-ssl-openssl=n/' 
 # 移除 bootstrap 主题
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
 
-mkdir package/community
-pushd package/community
-
-git clone --depth 1 https://github.com/kiddin9/openwrt-packages
-cd openwrt-packages
-find . -maxdepth 1 -type d ! -name ca-bundle ! -name luci-app-ddns-go ! -name filebrowser ! -name luci-app-filebrowser -exec rm -rf {} \;
-
-popd
-
 
 # 添加 ddns-go
 echo "
