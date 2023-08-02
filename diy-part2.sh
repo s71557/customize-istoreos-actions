@@ -54,13 +54,12 @@ sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootst
 mkdir package/community
 pushd package/community
 
-svn co https://github.com/kiddin9/openwrt-packages/branches/master/ca-bundle
-svn co https://github.com/kiddin9/openwrt-packages/branches/master/luci-app-ddns-go
-
-svn co https://github.com/kiddin9/openwrt-packages/branches/master/filebrowser
-svn co https://github.com/kiddin9/openwrt-packages/branches/master/luci-app-filebrowser
+git clone --depth 1 https://github.com/kiddin9/openwrt-packages
+cd openwrt-packages
+find . -maxdepth 1 -type d ! -name ca-bundle ! -name luci-app-ddns-go ! -name filebrowser ! -name luci-app-filebrowser -exec rm -rf {} \;
 
 popd
+
 
 # 添加 ddns-go
 echo "
