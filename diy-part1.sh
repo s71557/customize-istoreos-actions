@@ -20,14 +20,4 @@
 # echo 'src-git openclash https://github.com/vernesong/OpenClash' >>feeds.conf.default
 # echo 'src-git adguardhome https://github.com/rufengsuixing/luci-app-adguardhome' >>feeds.conf.default
 # echo 'src-git mosdns https://github.com/sbwml/luci-app-mosdns' >>feeds.conf.default
-
 # echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf
-
-mkdir package/community
-pushd package/community
-
-git clone --depth 1 https://github.com/kiddin9/openwrt-packages
-cd openwrt-packages
-find . -maxdepth 1 -type d ! -name filebrowser ! -name luci-app-filebrowser -exec rm -rf {} \;
-
-popd

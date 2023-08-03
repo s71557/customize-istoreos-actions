@@ -28,19 +28,14 @@ sed -i 's/CONFIG_PACKAGE_ddns-scripts_aliyun=y/# CONFIG_PACKAGE_ddns-scripts_ali
 sed -i 's/CONFIG_PACKAGE_luci-app-ddns=y/# CONFIG_PACKAGE_luci-app-ddns=y/' .config
 sed -i 's/CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y/' .config
 
+sed -i 's/CONFIG_PACKAGE_ddnsto=y/# CONFIG_PACKAGE_ddnsto=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-ddnsto=y/# CONFIG_PACKAGE_luci-app-ddnsto=y/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/' .config
+
 # 移除 istore os 页面
 sed -i 's/CONFIG_PACKAGE_quickstart=y/# CONFIG_PACKAGE_quickstart=y/' .config
 sed -i 's/CONFIG_PACKAGE_luci-app-quickstart=y/# CONFIG_PACKAGE_luci-app-quickstart=y/' .config
 sed -i 's/CONFIG_PACKAGE_luci-i18n-quickstart-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-quickstart-zh-cn=y/' .config
-
-# 移除 易有云
-sed -i 's/CONFIG_PACKAGE_linkease=y/# CONFIG_PACKAGE_linkease=y/' .config
-sed -i 's/CONFIG_PACKAGE_luci-app-linkease=y/# CONFIG_PACKAGE_luci-app-linkease=y/' .config
-sed -i 's/CONFIG_PACKAGE_luci-i18n-linkease-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-linkease-zh-cn=y/' .config
-
-sed -i 's/CONFIG_PACKAGE_ddnsto=y/# CONFIG_PACKAGE_ddnsto=y/' .config
-sed -i 's/CONFIG_PACKAGE_luci-app-ddnsto=y/# CONFIG_PACKAGE_luci-app-ddnsto=y/' .config
-sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/' .config
 
 # 移除 uhttpd
 sed -i 's/CONFIG_PACKAGE_uhttpd=y/CONFIG_PACKAGE_uhttpd=n/' .config
@@ -50,22 +45,6 @@ sed -i 's/CONFIG_PACKAGE_luci-ssl-openssl=y/CONFIG_PACKAGE_luci-ssl-openssl=n/' 
 
 # 移除 bootstrap 主题
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
-
-
-# 添加 ddns-go
-# echo "
-# CONFIG_PACKAGE_ca-bundle=y
-# CONFIG_PACKAGE_ddns-go=y
-# CONFIG_PACKAGE_luci-app-ddns-go=y
-# # CONFIG_PACKAGE_luci-i18n-ddns-go-zh-cn=y
-# " >> .config
-
-# 添加 文件管理
-echo "
-CONFIG_PACKAGE_filebrowser=y
-CONFIG_PACKAGE_luci-app-filebrowser=y
-CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y
-" >> .config
 
 # 添加 关机
 echo "

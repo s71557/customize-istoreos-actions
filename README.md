@@ -8,10 +8,8 @@
 
 - 移除 ddns 和 ddnsto
 - 移除 istore os 页面
-- 移除 易有云
 - 移除 uhttpd
 - 移除 bootstrap 主题
-- 添加 文件管理
 - 添加 关机
 - 添加 nginx
 
