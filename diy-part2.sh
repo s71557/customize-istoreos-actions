@@ -57,7 +57,7 @@ echo "
 CONFIG_PACKAGE_ca-bundle=y
 CONFIG_PACKAGE_ddns-go=y
 CONFIG_PACKAGE_luci-app-ddns-go=y
-CONFIG_PACKAGE_luci-i18n-ddns-go-zh-cn=y
+# CONFIG_PACKAGE_luci-i18n-ddns-go-zh-cn=y
 " >> .config
 
 # 添加 文件管理
