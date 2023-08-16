@@ -7,6 +7,15 @@
 # Blog: https://mlapp.cn
 #=================================================
 
+get_arch(){
+  arch=$(uname -m)
+  if [ "$arch" = "x86_64" ]; then
+    echo "amd64"
+  else
+    echo "arm64" 
+  fi
+}
+
 mkdir -p files/etc/openclash/core
 
 CLASH_DEV_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/dev/clash-linux-${1}.tar.gz"
