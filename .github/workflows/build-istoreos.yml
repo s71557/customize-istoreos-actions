@@ -106,8 +106,6 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
-        arch=$(get_arch) 
-        $GITHUB_WORKSPACE/preset-clash-core.sh $arch
 
     - name: 更新 feeds
       run: cd openwrt && ./scripts/feeds update -a
