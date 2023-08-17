@@ -48,6 +48,8 @@ sed -i 's/OpenWrt/iStore OS/g' package/base-files/files/bin/config_generate
 
 # 添加 关机
 echo "
+CONFIG_GRUB_IMAGES=y
+CONFIG_VMDK_IMAGES=y
 CONFIG_PACKAGE_luci-app-poweroff=y
 CONFIG_PACKAGE_luci-i18n-poweroff-zh-cn=y
 CONFIG_PACKAGE_luci-app-openclash=y
