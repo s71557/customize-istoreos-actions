@@ -44,7 +44,7 @@ sed -i 's/192.168.100.1/192.168.11.1/g' package/base-files/files/bin/config_gene
 # sed -i 's/CONFIG_PACKAGE_luci-ssl-openssl=y/CONFIG_PACKAGE_luci-ssl-openssl=n/' .config
 
 # 移除 bootstrap 主题
-# sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
+ sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
 
 # 添加 关机
 echo "
