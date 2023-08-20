@@ -50,6 +50,7 @@ sed -i 's/192.168.100.1/192.168.11.1/g' package/base-files/files/bin/config_gene
 echo "
 CONFIG_GRUB_IMAGES=y
 CONFIG_VMDK_IMAGES=y
+CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-netdata=y
 CONFIG_PACKAGE_luci-app-poweroff=y
 CONFIG_PACKAGE_luci-i18n-poweroff-zh-cn=y
