@@ -50,7 +50,6 @@
 echo "
 CONFIG_GRUB_IMAGES=y
 CONFIG_VMDK_IMAGES=y
-CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-netdata=y
 CONFIG_PACKAGE_luci-app-poweroff=y
 CONFIG_PACKAGE_luci-i18n-poweroff-zh-cn=y
