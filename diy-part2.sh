@@ -54,7 +54,6 @@ CONFIG_PACKAGE_luci-app-poweroff=y
 CONFIG_PACKAGE_luci-i18n-poweroff-zh-cn=y
 CONFIG_PACKAGE_luci-app-openclash=y
 CONFIG_PACKAGE_kmod-inet-diag=y
-CONFIG_PACKAGE_luci-app-rclone=y
 CONFIG_PACKAGE_luci-app-aliyundrive-webdav=y
 CONFIG_PACKAGE_luci-app-passwall2=y
 CONFIG_PACKAGE_luci-app-passwall=y
@@ -110,7 +109,8 @@ CONFIG_PACKAGE_luci-app-turboacc=y
 CONFIG_PACKAGE_luci-app-adguardhome=y
 CONFIG_PACKAGE_luci-app-mosdns=y
 CONFIG_PACKAGE_luci-app-smartdns=y
-CONFIG_PACKAGE_luci-app-upnp=n
+CONFIG_PACKAGE_luci-app-nlbwmon=y
+CONFIG_PACKAGE_luci-app-wrtbwmon=y
 " >> .config
 
 # 添加 nginx
