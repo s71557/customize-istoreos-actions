@@ -10,9 +10,29 @@ on:
         default: 'false'
   #schedule:
   # - cron: 0 16 * * *
-
+  #公用核心标识
+  workflow_call:
+    inputs:
+      OpenWrt_TARGET:
+        required: true
+        type: string
+      OpenWrt_THEME:
+        required: true
+        type: string
+      OpenWrt_NAME:
+        required: true
+        type: string
+      OpenWrt_URL:
+        required: true
+        type: string
+      OpenWrt_PW:
+        required: true
+        type: string
+      OpenWrt_IP:
+        required: true
+        type: string
 env:
-  REPO_URL: https://github.com/istoreos/istoreos
+  REPO_URL: https://github.com/coolsnowwolf/lede
   # REPO_BRANCH: main
   FEEDS_CONF: feeds.conf
   CONFIG_FILE: .config
@@ -21,6 +41,12 @@ env:
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
+  #默认主题
+  OpenWrt_THEME: argon
+  #默认主机名
+  OpenWrt_NAME: StoneOS
+  #默认地址
+  OpenWrt_IP: 192.168.11.1
   TZ: Asia/Shanghai
   GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
