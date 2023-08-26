@@ -8,8 +8,8 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
-  #schedule:
-  # - cron: 0 16 * * *
+  schedule:
+   - cron: 0 16 * * *
   #公用核心标识
   workflow_call:
     inputs:
