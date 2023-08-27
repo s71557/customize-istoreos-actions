@@ -61,8 +61,8 @@ jobs:
           # - istoreos-22.03
           # - istoreos-23.05
         ARCHITECTURE:
-          # - rk33xx
-          # - rk35xx
+          - Rockchip
+          - Mediatek
           - x86
         os:
           - ubuntu-22.04
