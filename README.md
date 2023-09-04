@@ -7,7 +7,6 @@
 ## 功能特性
 
 - 移除 ddns 和 ddnsto
-- 移除 istore os 页面
 - 移除 bootstrap 主题
 - 添加 关机
 - 移除 `ath | iwlwifi | rtl` 网卡驱动
