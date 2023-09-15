@@ -38,9 +38,7 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome
 
 # Mosdns
-svn export https://github.com/kiddin9/openwrt-packages/trunk/v2dat
-svn export https://github.com/kiddin9/openwrt-packages/trunk/mosdns
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-mosdns
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 
 
 popd
 
