@@ -37,10 +37,13 @@ svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome
 svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome
 
-# Mosdns
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 
-
 popd
+
+# Mosdns
+rm -rf feeds/packages/net/v2ray-geodata
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+
 
 echo "
 # 额外组件
