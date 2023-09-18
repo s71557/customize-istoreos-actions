@@ -42,8 +42,10 @@ svn export https://github.com/sbwml/luci-app-mosdns/trunk/mosdns package/mosdns
 svn export https://github.com/sbwml/luci-app-mosdns/trunk/v2dat package/v2dat
 
 #Password
-git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
-git clone https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
+svn export https://github.com/s71557/Lede-Packages/trunk/luci-app-passwall package/luci-app-passwall
+svn export https://github.com/s71557/Lede-Packages/trunk/luci-app-passwall2 package/luci-app-passwall2
+svn export https://github.com/s71557/Lede-Packages/trunk/openwrt-passwall-packages package/passwall
+
 
 echo "
 # 额外组件
