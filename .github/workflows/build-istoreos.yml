@@ -32,7 +32,7 @@ jobs:
         REPO_BRANCH:
           # - main
           # - istoreos-22.03
-          - istoreos-22.03
+          - istoreos-22.05
         ARCHITECTURE:
           - rk33xx
           - rk35xx
