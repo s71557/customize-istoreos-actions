@@ -27,14 +27,19 @@ sed -i 's/192.168.1.1/192.168.11.252/g' package/base-files/files/bin/config_gene
 # 默认打开 WiFi
 # sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-# OpenClash
-git clone https://github.com/vernesong/OpenClash package/OpenClash
+# openclash
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-openclash  package/luci-app-openclash
 
-# ADGuardHome
-git clone https://github.com/rufengsuixing/luci-app-adguardhome package/Adguardhome
+# adguardhome
+svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome package/luci-app-adguardhome
+svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/adguardhome
 
-# Mosdns
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+# mosdns
+rm -rf feeds/packages/net/mosdns
+rm -rf feeds/luci/applications/luci-app-mosdns
+svn export https://github.com/sbwml/luci-app-mosdns/trunk/luci-app-mosdns package/luci-app-mosdns
+svn export https://github.com/sbwml/luci-app-mosdns/trunk/mosdns package/mosdns
+svn export https://github.com/sbwml/luci-app-mosdns/trunk/v2dat package/v2dat
 
 #Password
 git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
@@ -45,17 +50,17 @@ echo "
 CONFIG_GRUB_IMAGES=y
 CONFIG_VMDK_IMAGES=y
 
-# 关机
-CONFIG_PACKAGE_luci-app-poweroff=y
+# # 关机
+# CONFIG_PACKAGE_luci-app-poweroff=y
 
-# openclash
-CONFIG_PACKAGE_luci-app-openclash=y
+# # openclash
+# CONFIG_PACKAGE_luci-app-openclash=y
 
-# adguardhome
-CONFIG_PACKAGE_luci-app-adguardhome=y
+# # adguardhome
+# CONFIG_PACKAGE_luci-app-adguardhome=y
 
-# mosdns
-CONFIG_PACKAGE_luci-app-mosdns=y
+# # mosdns
+# CONFIG_PACKAGE_luci-app-mosdns=y
 
 #password
 CONFIG_PACKAGE_luci-app-passwall2=y
