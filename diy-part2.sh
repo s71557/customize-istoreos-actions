@@ -36,6 +36,10 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome package/Adguardh
 # Mosdns
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 
+#Password
+git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
+git clone https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
+
 echo "
 # 额外组件
 CONFIG_GRUB_IMAGES=y
