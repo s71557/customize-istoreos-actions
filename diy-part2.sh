@@ -25,25 +25,14 @@ sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 # 默认打开 WiFi
 sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-
-# 添加第三方应用
-mkdir package/community
-pushd package/community
-
 # OpenClash
-svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
+git clone https://github.com/vernesong/OpenClash package/OpenClash
 
 # ADGuardHome
-svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome
-
-popd
+git clone https://github.com/rufengsuixing/luci-app-adguardhome package/Adguardhome
 
 # Mosdns
-# rm -rf feeds/packages/net/v2ray-geodata
-# git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-# git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 
 echo "
 # 额外组件
@@ -55,16 +44,14 @@ CONFIG_PACKAGE_luci-app-poweroff=y
 CONFIG_PACKAGE_luci-i18n-poweroff-zh-cn=y
 
 # openclash
-CONFIG_PACKAGE_luci-luci-app-openclash=y
+CONFIG_PACKAGE_luci-app-openclash=y
 CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y
 
 # adguardhome
 CONFIG_PACKAGE_luci-app-adguardhome=y
-CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y
 
 # mosdns
-# CONFIG_PACKAGE_luci-app-mosdns=y
-# CONFIG_PACKAGE_luci-i18n-mosdns-zh-cn=y
+CONFIG_PACKAGE_luci-app-mosdns=y
 
 " >> .config
 
