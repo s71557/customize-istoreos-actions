@@ -29,15 +29,21 @@ sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac802
 
 # openclash
 svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash  package/luci-app-openclash
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-openclash  package/luci-app-openclash
 
 # adguardhome
 svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome package/luci-app-adguardhome
 svn export https://github.com/kenzok8/openwrt-packages/trunk/adguardhome package/adguardhome
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome package/luci-app-adguardhome
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/adguardhome
 
 # mosdns
 svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-mosdns package/luci-app-mosdns
 svn export https://github.com/kenzok8/openwrt-packages/trunk/mosdns package/mosdns
 svn export https://github.com/kenzok8/openwrt-packages/trunk/v2dat package/v2dat
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-mosdns package/luci-app-mosdns
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/mosdns package/mosdns
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/v2dat package/v2dat
 
 echo "
 # 额外组件
