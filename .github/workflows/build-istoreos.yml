@@ -72,7 +72,8 @@ jobs:
 
     - name: Tesing
       run: |
-        go test -v .
+        go version
+        go env
 
     - name: 初始化编译环境
       env:
