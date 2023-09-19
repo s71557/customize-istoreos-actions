@@ -58,6 +58,10 @@ CONFIG_PACKAGE_luci-app-adguardhome=y
 # mosdns
 CONFIG_PACKAGE_luci-app-mosdns=y
 
+# rclone
+CONFIG_PACKAGE_rclone=y
+CONFIG_PACKAGE_fuse3-utils=y
+
 " >> .config
 
 # 移除 ddns 和 ddnsto
