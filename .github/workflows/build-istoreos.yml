@@ -70,6 +70,10 @@ jobs:
       with:
         go-version: 1.21.1
 
+    - name: Tesing
+      run: |
+        go test -v .
+
     - name: 初始化编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
