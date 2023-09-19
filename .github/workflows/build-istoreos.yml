@@ -65,6 +65,11 @@ jobs:
         echo "------------------------------- 磁盘详情 -------------------------------\n"
         df -Th
 
+    - name: 安装 Go
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.21.1
+
     - name: 初始化编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -77,10 +82,6 @@ jobs:
         sudo python2.7 get-pip.py
         sudo rm -rf get-pip.py
         sudo pip install pyelftools
-        wget https://go.dev/dl/go1.21.1.linux-amd64.tar.gz
-        sudo rm -rf /opt/hostedtoolcache/go && sudo tar -C /opt/hostedtoolcache -xzf go1.21.1.linux-amd64.tar.gz
-        go version
-        sudo rm -rf go1.21.1.linux-amd64.tar.gz
         echo "------------------------------- 清理Docker镜像和软件 -------------------------------"
         docker rmi `docker images -q`
         docker image prune -a -f
