@@ -77,9 +77,8 @@ jobs:
         sudo python2.7 get-pip.py
         sudo rm -rf get-pip.py
         sudo pip install pyelftools
-        go env
         wget https://go.dev/dl/go1.21.1.linux-amd64.tar.gz
-        sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.21.1.linux-amd64.tar.gz
+        sudo rm -rf /opt/hostedtoolcache/go && sudo tar -C /opt/hostedtoolcache -xzf go1.21.1.linux-amd64.tar.gz
         go version
         sudo rm -rf go1.21.1.linux-amd64.tar.gz
         echo "------------------------------- 清理Docker镜像和软件 -------------------------------"
