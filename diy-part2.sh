@@ -46,17 +46,17 @@ echo "
 CONFIG_GRUB_IMAGES=y
 CONFIG_VMDK_IMAGES=y
 
-# # 关机
-# CONFIG_PACKAGE_luci-app-poweroff=y
+# 关机
+CONFIG_PACKAGE_luci-app-poweroff=y
 
-# # openclash
-# CONFIG_PACKAGE_luci-app-openclash=y
+# openclash
+CONFIG_PACKAGE_luci-app-openclash=y
 
-# # adguardhome
-# CONFIG_PACKAGE_luci-app-adguardhome=y
+# adguardhome
+CONFIG_PACKAGE_luci-app-adguardhome=y
 
-# # mosdns
-# CONFIG_PACKAGE_luci-app-mosdns=y
+# mosdns
+CONFIG_PACKAGE_luci-app-mosdns=y
 
 " >> .config
 
