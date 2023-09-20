@@ -11,7 +11,7 @@
 - 添加 关机
 - 添加 OpenClash
 - 添加 ADGuardHome
-- 添加 Mosdns
+- ~~添加 Mosdns~~
 - 添加 Rclone
 - 支持 VMDK
 
