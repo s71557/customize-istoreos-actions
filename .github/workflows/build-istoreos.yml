@@ -41,7 +41,7 @@ jobs:
           - ubuntu-22.04
         include:
           - REPO_BRANCH: istoreos-23.05
-            ARCHITECTURE: x86
+            ARCHITECTURE: x86-alpha
             os: ubuntu-22.04
 
       fail-fast: false
@@ -64,6 +64,11 @@ jobs:
         echo -e "磁盘数量: $(ls /dev/sd* | grep -v [1-9] | wc -l) \n"
         echo "------------------------------- 磁盘详情 -------------------------------\n"
         df -Th
+
+    - name: 安装 Go 1.21.1
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.21.1
 
     - name: 初始化编译环境
       env:

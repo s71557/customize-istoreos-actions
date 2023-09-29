@@ -28,35 +28,43 @@ sed -i 's/192.168.1.1/192.168.11.252/g' package/base-files/files/bin/config_gene
 # sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # openclash
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-openclash  package/luci-app-openclash
+svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash  package/luci-app-openclash
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-openclash  package/luci-app-openclash
 
 # adguardhome
-svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome package/luci-app-adguardhome
-svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/adguardhome
+svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome package/luci-app-adguardhome
+svn export https://github.com/kenzok8/openwrt-packages/trunk/adguardhome package/adguardhome
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-adguardhome package/luci-app-adguardhome
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/adguardhome
 
 # mosdns
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/luci/applications/luci-app-mosdns
-svn export https://github.com/sbwml/luci-app-mosdns/trunk/luci-app-mosdns package/luci-app-mosdns
-svn export https://github.com/sbwml/luci-app-mosdns/trunk/mosdns package/mosdns
-svn export https://github.com/sbwml/luci-app-mosdns/trunk/v2dat package/v2dat
+# svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-mosdns package/luci-app-mosdns
+# svn export https://github.com/kenzok8/openwrt-packages/trunk/mosdns package/mosdns
+# svn export https://github.com/kenzok8/openwrt-packages/trunk/v2dat package/v2dat
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-mosdns package/luci-app-mosdns
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/mosdns package/mosdns
+# svn export https://github.com/kiddin9/openwrt-packages/trunk/v2dat package/v2dat
 
 echo "
 # 额外组件
 CONFIG_GRUB_IMAGES=y
 CONFIG_VMDK_IMAGES=y
 
-# # 关机
-# CONFIG_PACKAGE_luci-app-poweroff=y
+# 关机
+CONFIG_PACKAGE_luci-app-poweroff=y
 
-# # openclash
-# CONFIG_PACKAGE_luci-app-openclash=y
+# openclash
+CONFIG_PACKAGE_luci-app-openclash=y
 
-# # adguardhome
-# CONFIG_PACKAGE_luci-app-adguardhome=y
+# adguardhome
+CONFIG_PACKAGE_luci-app-adguardhome=y
 
-# # mosdns
+# mosdns
 # CONFIG_PACKAGE_luci-app-mosdns=y
+
+# rclone
+CONFIG_PACKAGE_rclone=y
+CONFIG_PACKAGE_fuse3-utils=y
 
 " >> .config
 
