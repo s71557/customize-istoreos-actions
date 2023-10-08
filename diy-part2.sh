@@ -47,9 +47,9 @@ svn export https://github.com/kenzok8/openwrt-packages/trunk/adguardhome package
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/adguardhome package/adguardhome
 
 # mosdns
-# svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-mosdns package/luci-app-mosdns
-# svn export https://github.com/kenzok8/openwrt-packages/trunk/mosdns package/mosdns
-# svn export https://github.com/kenzok8/openwrt-packages/trunk/v2dat package/v2dat
+svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-mosdns package/luci-app-mosdns
+svn export https://github.com/kenzok8/openwrt-packages/trunk/mosdns package/mosdns
+svn export https://github.com/kenzok8/openwrt-packages/trunk/v2dat package/v2dat
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-mosdns package/luci-app-mosdns
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/mosdns package/mosdns
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/v2dat package/v2dat
