@@ -6,14 +6,15 @@
 
 ## 功能特性
 
+- x86 支持 VMDK
 - 移除 ddns 和 ddnsto
 - 移除 bootstrap 主题
 - 添加 关机
 - 添加 OpenClash
 - 添加 ADGuardHome
-- ~~添加 Mosdns~~
+- 添加 Mosdns
 - 添加 Rclone
-- 支持 VMDK
+
 
 ## 默认配置
 
