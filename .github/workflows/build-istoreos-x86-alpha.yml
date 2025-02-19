@@ -1,4 +1,4 @@
-name: Build iStore OS
+name: Build iStore OS x86-alpha
 
 on:
   repository_dispatch:
@@ -45,12 +45,14 @@ jobs:
       matrix:
         REPO_BRANCH:
           # - main
-          - istoreos-22.03
+          # - istoreos-22.03
           # - istoreos-23.05
+          - istoreos-24.10
         ARCHITECTURE:
-          - rk33xx
-          - rk35xx
-          - x86
+          # - rk33xx
+          # - rk35xx
+          # - x86
+          - x86-alpha
         os:
           - ubuntu-22.04
 
@@ -153,7 +155,7 @@ jobs:
     - name: 设置系统名称
       run: |
         cd openwrt
-        set_os_name="${{ github.event.inputs.os_name }}"
+        set_os_name=${{ github.event.inputs.os_name }}
         sed -i "s/OpenWrt/${set_os_name}/g" package/base-files/files/bin/config_generate
         echo "Set OS name : ${set_os_name}"
 
@@ -219,7 +221,7 @@ jobs:
       id: tag
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::${{ matrix.ARCHITECTURE }}"
+        echo "::set-output name=release_tag::${{ matrix.ARCHITECTURE }}- x86-alpha"
         touch release.txt
         echo "
         💻 架构: ${{ matrix.ARCHITECTURE }}
