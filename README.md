@@ -7,18 +7,12 @@
 ## 功能特性
 
 - x86 支持 VMDK
-- 移除 ddns 和 ddnsto
-- 移除 bootstrap 主题
-- 添加 关机
 - 添加 OpenClash
-- 添加 ADGuardHome
-- 添加 Mosdns
-- 添加 Rclone
 
 
 ## 默认配置
 
-- IP: `http://10.0.0.1` or `http://iStoreOS.lan/`
+- IP: `http://192.168.100.1` or `http://iStoreOS.lan/`
 - 用户名: `root`
 - 密码: `password`
 - 如果设备只有一个网口，则此网口就是 `LAN` , 如果大于一个网口, 默认第一个网口是 `WAN` 口, 其它都是 `LAN`
