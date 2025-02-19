@@ -34,9 +34,9 @@
 # sed -i 's/CONFIG_PACKAGE_luci-app-ddns=y/CONFIG_PACKAGE_luci-app-ddns=n/' .config
 # sed -i 's/CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=n/' .config
 # 移除ddnsto
-sed -i 's/CONFIG_PACKAGE_ddnsto=y/CONFIG_PACKAGE_ddnsto=n/' .config
-sed -i 's/CONFIG_PACKAGE_luci-app-ddnsto=y/CONFIG_PACKAGE_luci-app-ddnsto=n/' .config
-sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=n/' .config
+# sed -i 's/CONFIG_PACKAGE_ddnsto=y/CONFIG_PACKAGE_ddnsto=n/' .config
+# sed -i 's/CONFIG_PACKAGE_luci-app-ddnsto=y/CONFIG_PACKAGE_luci-app-ddnsto=n/' .config
+# sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=n/' .config
 
 # 移除网卡驱动
 # sed -i 's/CONFIG_PACKAGE_kmod-ath=y/CONFIG_PACKAGE_kmod-ath=n/' .config
@@ -77,7 +77,7 @@ sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddnst
 # sed -i 's/CONFIG_PACKAGE_luci-ssl-openssl=y/CONFIG_PACKAGE_luci-ssl-openssl=n/' .config
 
 # 移除 bootstrap 主题
-sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
+# sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
 
 # 添加第三方应用
 mkdir kiddin9
@@ -115,8 +115,8 @@ pushd package/community
 mkdir luci-app-guest-wifi
 cp -rf ../../kiddin9/luci-app-guest-wifi/* luci-app-guest-wifi
 #Onliner
-mkdir luci-app-onliner
-cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
+# mkdir luci-app-onliner
+# cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 #Eqos（iStoreOS已有）
 #svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-eqos
 #Wolplus（已有Wol）
@@ -125,20 +125,20 @@ cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 mkdir luci-app-wifischedule
 cp -rf ../../kiddin9/luci-app-wifischedule/* luci-app-wifischedule
 #RAMfree
-mkdir luci-app-ramfree
-cp -rf ../../kiddin9/luci-app-ramfree/* luci-app-ramfree
+# mkdir luci-app-ramfree
+# cp -rf ../../kiddin9/luci-app-ramfree/* luci-app-ramfree
 #ttyd（conf已有）
 # mkdir luci-app-ttyd
 # cp -rf ../kiddin9/luci-app-ttyd/* luci-app-ttyd
 #usb3disable（禁用USB3.0接口）
-mkdir luci-app-usb3disable
-cp -rf ../../kiddin9/luci-app-usb3disable/* luci-app-usb3disable
+# mkdir luci-app-usb3disable
+# cp -rf ../../kiddin9/luci-app-usb3disable/* luci-app-usb3disable
 #NetData（系统监控）
-mkdir luci-app-netdata
-cp -rf ../../kiddin9/luci-app-netdata/* luci-app-netdata
+# mkdir luci-app-netdata
+# cp -rf ../../kiddin9/luci-app-netdata/* luci-app-netdata
 #rtbwmon（实施流量）
-mkdir luci-app-rtbwmon
-cp -rf ../../kiddin9/luci-app-rtbwmon/* luci-app-rtbwmon
+# mkdir luci-app-rtbwmon
+# cp -rf ../../kiddin9/luci-app-rtbwmon/* luci-app-rtbwmon
 
 # 存储相关应用
 # Gowebdav（iStoreOS已有）
@@ -190,10 +190,10 @@ fi
 
 # 去广告
 #ADGuardHome（kiddin9）
-mkdir luci-app-adguardhome
-cp -rf ../../kiddin9/luci-app-adguardhome/* luci-app-adguardhome
-cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-adguardhome/* luci-app-adguardhome
-sed -i 's/拦截DNS服务器/拦截DNS服务器（默认用户名和密码均为root）/' luci-app-adguardhome/po/zh_Hans/adguardhome.po
+# mkdir luci-app-adguardhome
+# cp -rf ../../kiddin9/luci-app-adguardhome/* luci-app-adguardhome
+# cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-adguardhome/* luci-app-adguardhome
+# sed -i 's/拦截DNS服务器/拦截DNS服务器（默认用户名和密码均为root）/' luci-app-adguardhome/po/zh_Hans/adguardhome.po
 #sed -i 's/+PACKAGE_$(PKG_NAME)_INCLUDE_binary:adguardhome//' luci-app-adguardhome/Makefile
 #ADGuardHome（kenzok8）
 # svn export https://github.com/kenzok8/openwrt-packages/trunk/adguardhome
@@ -236,40 +236,40 @@ sed -i 's/拦截DNS服务器/拦截DNS服务器（默认用户名和密码均为
 #Socat（iStoreOS已有）
 #svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-socat
 #Unblockneteasemusic
-mkdir UnblockNeteaseMusic
-mkdir luci-app-unblockneteasemusic
-cp -rf ../../kiddin9/UnblockNeteaseMusic/* UnblockNeteaseMusic
-cp -rf ../../kiddin9/luci-app-unblockneteasemusic/* luci-app-unblockneteasemusic
+# mkdir UnblockNeteaseMusic
+# mkdir luci-app-unblockneteasemusic
+# cp -rf ../../kiddin9/UnblockNeteaseMusic/* UnblockNeteaseMusic
+# cp -rf ../../kiddin9/luci-app-unblockneteasemusic/* luci-app-unblockneteasemusic
 #OpenAppFilter（conf已有）
 # svn export https://github.com/destan19/OpenAppFilter/trunk OpenAppFilter
 #njitclient
-mkdir njitclient
-mkdir luci-app-njitclient
-cp -rf ../../kiddin9/njitclient/* njitclient
-cp -rf ../../kiddin9/luci-app-njitclient/* luci-app-njitclient
+# mkdir njitclient
+# mkdir luci-app-njitclient
+# cp -rf ../../kiddin9/njitclient/* njitclient
+# cp -rf ../../kiddin9/luci-app-njitclient/* luci-app-njitclient
 #sysuh3c
-mkdir sysuh3c
-mkdir luci-app-sysuh3c
-cp -rf ../../kiddin9/sysuh3c/* sysuh3c
-cp -rf ../../kiddin9/luci-app-sysuh3c/* luci-app-sysuh3c
+# mkdir sysuh3c
+# mkdir luci-app-sysuh3c
+# cp -rf ../../kiddin9/sysuh3c/* sysuh3c
+# cp -rf ../../kiddin9/luci-app-sysuh3c/* luci-app-sysuh3c
 
 # 5G通信模组拨号工具
-mkdir quectel_QMI_WWAN
-mkdir quectel_cm_5G
-mkdir quectel_MHI
-mkdir luci-app-hypermodem
-cp -rf ../../Modem-Support/quectel_QMI_WWAN/* quectel_QMI_WWAN
-cp -rf ../../Modem-Support/quectel_cm_5G/* quectel_cm_5G
-cp -rf ../../Modem-Support/quectel_MHI/* quectel_MHI
-cp -rf ../../Modem-Support/luci-app-hypermodem/* luci-app-hypermodem
+# mkdir quectel_QMI_WWAN
+# mkdir quectel_cm_5G
+# mkdir quectel_MHI
+# mkdir luci-app-hypermodem
+# cp -rf ../../Modem-Support/quectel_QMI_WWAN/* quectel_QMI_WWAN
+# cp -rf ../../Modem-Support/quectel_cm_5G/* quectel_cm_5G
+# cp -rf ../../Modem-Support/quectel_MHI/* quectel_MHI
+# cp -rf ../../Modem-Support/luci-app-hypermodem/* luci-app-hypermodem
 
 # 5G模组短信插件
 # cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
-mkdir sms-tool
-mkdir luci-app-sms-tool
-cp -rf ../../Modem-Support/sms-tool/* sms-tool
-cp -rf ../../Modem-Support/luci-app-sms-tool/* luci-app-sms-tool
-cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* luci-app-sms-tool
+# mkdir sms-tool
+# mkdir luci-app-sms-tool
+# cp -rf ../../Modem-Support/sms-tool/* sms-tool
+# cp -rf ../../Modem-Support/luci-app-sms-tool/* luci-app-sms-tool
+# cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* luci-app-sms-tool
 
 # 5G模组信息插件
 # svn export https://github.com/qiuweichao/luci-app-modem-info/trunk/luci-app-3ginfo-lite
@@ -277,10 +277,10 @@ cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* 
 # svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
 
 # 5G模组信息插件+AT工具
-mkdir luci-app-modem
-cp -rf ../../Modem-Support/luci-app-modem/* luci-app-modem
-rm -rf ../../Modem-Support/luci-app-modem/po/zh_Hans #解决汉化问题
-popd
+# mkdir luci-app-modem
+# cp -rf ../../Modem-Support/luci-app-modem/* luci-app-modem
+# rm -rf ../../Modem-Support/luci-app-modem/po/zh_Hans #解决汉化问题
+# popd
 
 # 5G模组拨号脚本
 # mkdir -p package/base-files/files/root/5GModem
@@ -290,24 +290,24 @@ popd
 # 添加第三方应用
 echo "
 # 系统相关应用
-CONFIG_PACKAGE_luci-app-poweroff=y
-CONFIG_PACKAGE_luci-app-fileassistant=y
-CONFIG_PACKAGE_luci-app-guest-wifi=y
-CONFIG_PACKAGE_luci-app-onliner=y
-CONFIG_PACKAGE_luci-app-eqos=y
+# CONFIG_PACKAGE_luci-app-poweroff=y
+# CONFIG_PACKAGE_luci-app-fileassistant=y
+# CONFIG_PACKAGE_luci-app-guest-wifi=y
+# CONFIG_PACKAGE_luci-app-onliner=y
+# CONFIG_PACKAGE_luci-app-eqos=y
 # CONFIG_PACKAGE_luci-app-wolplus=y
-CONFIG_PACKAGE_luci-app-wifischedule=y
-CONFIG_PACKAGE_luci-app-ramfree=y
+# CONFIG_PACKAGE_luci-app-wifischedule=y
+# CONFIG_PACKAGE_luci-app-ramfree=y
 # CONFIG_PACKAGE_luci-app-usb3disable=y
-CONFIG_PACKAGE_luci-app-luci-app-netdata=y
-CONFIG_PACKAGE_luci-app-luci-app-rtbwmon=y
+# CONFIG_PACKAGE_luci-app-luci-app-netdata=y
+# CONFIG_PACKAGE_luci-app-luci-app-rtbwmon=y
 
 # 存储相关应用
 # CONFIG_PACKAGE_luci-app-gowebdav=y
 
 # 科学上网和代理应用
 #SSR
-CONFIG_PACKAGE_luci-app-ssr-plus=y
+# CONFIG_PACKAGE_luci-app-ssr-plus=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client is not set
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client is not set
@@ -371,7 +371,7 @@ CONFIG_PACKAGE_luci-app-ssr-plus=y
 CONFIG_PACKAGE_luci-app-openclash=y
 
 # 去广告应用
-CONFIG_PACKAGE_luci-app-adguardhome=y
+# CONFIG_PACKAGE_luci-app-adguardhome=y
 # CONFIG_PACKAGE_luci-app-dnsfilter=y
 # CONFIG_PACKAGE_luci-app-ikoolproxy=y
 
@@ -421,14 +421,14 @@ CONFIG_PACKAGE_luci-app-adguardhome=y
 
 # 其他
 # CONFIG_PACKAGE_luci-app-pushbot=y
-CONFIG_PACKAGE_luci-app-socat=y
-CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
+# CONFIG_PACKAGE_luci-app-socat=y
+# CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 # CONFIG_PACKAGE_luci-app-uugamebooster=y
 # CONFIG_PACKAGE_luci-app-wifischedule=y
 # CONFIG_PACKAGE_luci-app-xlnetacc=y
 # CONFIG_PACKAGE_luci-udptools=y
-CONFIG_PACKAGE_luci-app-njitclient=y
-CONFIG_PACKAGE_luci-app-sysuh3c=y
+# CONFIG_PACKAGE_luci-app-njitclient=y
+# CONFIG_PACKAGE_luci-app-sysuh3c=y
 " >> .config
 
 #补充网卡
@@ -450,7 +450,7 @@ echo "
 # CONFIG_PACKAGE_ext-rooter-basic=y
 
 # 5G模组短信插件
-CONFIG_PACKAGE_luci-app-sms-tool=y
+# CONFIG_PACKAGE_luci-app-sms-tool=y
 
 # 5G模组信息插件
 # CONFIG_PACKAGE_luci-app-3ginfo-lite=y
@@ -459,8 +459,8 @@ CONFIG_PACKAGE_luci-app-sms-tool=y
 # 5G模组信息插件+AT工具
 # CONFIG_PACKAGE_luci-app-cpe=y
 # CONFIG_PACKAGE_sendat=y
-CONFIG_PACKAGE_sms-tool=y
-CONFIG_PACKAGE_luci-app-modem=y
+# CONFIG_PACKAGE_sms-tool=y
+# CONFIG_PACKAGE_luci-app-modem=y
 
 # QMI拨号工具（移远，广和通）
 # CONFIG_PACKAGE_quectel-CM-5G=y
@@ -475,11 +475,11 @@ CONFIG_PACKAGE_luci-app-modem=y
 # CONFIG_PACKAGE_luci-app-gobinetmodem=y
 
 # 串口调试工具
-CONFIG_PACKAGE_minicom=y
+# CONFIG_PACKAGE_minicom=y
 
 # 脚本拨号工具依赖
-CONFIG_PACKAGE_procps-ng=y
-CONFIG_PACKAGE_procps-ng-ps=y
+# CONFIG_PACKAGE_procps-ng=y
+# CONFIG_PACKAGE_procps-ng-ps=y
 " >> .config
 
 # 额外组件
