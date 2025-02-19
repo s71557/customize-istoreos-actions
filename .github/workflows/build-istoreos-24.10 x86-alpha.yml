@@ -11,7 +11,7 @@ on:
       os_name:
         description: '设置系统名称'
         required: true
-        default: "iStore OS"
+        default: 'iStoreOS'
       enable_wifi:
         description: '启用WiFi'
         required: true
