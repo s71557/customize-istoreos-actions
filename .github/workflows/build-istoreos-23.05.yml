@@ -10,7 +10,7 @@ on:
         default: '192.168.100.1'
       os_name:
         description: '设置系统名称'
-        required: false
+        required: true
         default: 'iStoreOS'
       enable_wifi:
         description: '启用WiFi'
