@@ -486,6 +486,8 @@ echo "
 echo "
 CONFIG_GRUB_IMAGES=y
 CONFIG_VMDK_IMAGES=y
+CONFIG_ISO_IMAGES=y
+CONFIG_QCOW2_IMAGES=y
 " >> .config
 
 # 添加设备
