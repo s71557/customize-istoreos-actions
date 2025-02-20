@@ -515,4 +515,4 @@ CONFIG_QCOW2_IMAGES=y
 #     sed -i "s/# CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_yyy_h1 is not set/CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_yyy_h1=y/g" .config
 # fi
 
-# cat .config
+cat .config
