@@ -60,7 +60,7 @@ jobs:
 
     steps:
     - name: 准备完成
-      uses: actions/checkout@main
+      uses: actions/checkout@v4
 
     - name: 检查服务器配置
       run: |
@@ -78,7 +78,7 @@ jobs:
         df -Th
 
     - name: 安装 Go 1.21.1
-      uses: actions/setup-go@v1
+      uses: actions/setup-go@v5
       with:
         go-version: 1.21.1
 
@@ -160,7 +160,7 @@ jobs:
         echo "Set OS name : ${set_os_name}"
 
     - name: 启用WiFi
-      if: github.event.inputs.enable_wifi == 'true'
+      if: github.event.inputs.enable_wifi == 'false'
       run: |
         cd openwrt
         sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
@@ -195,7 +195,7 @@ jobs:
       run: df -hT
 
     - name: 上传 bin 文件夹
-      uses: actions/upload-artifact@main
+      uses: actions/upload-artifact@v4
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
         name: OpenWrt_bin${{ env.FILE_DATE }}
@@ -211,7 +211,7 @@ jobs:
         echo "::set-output name=status::success"
 
     - name: 上传固件目录
-      uses: actions/upload-artifact@main
+      uses: actions/upload-artifact@v4
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: OpenWrt_firmware${{ env.FILE_DATE }}
@@ -240,7 +240,7 @@ jobs:
         echo "::set-output name=status::success"
 
     - name: 自动发布固件到 Releases
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       if: steps.tag.outputs.status == 'success' && !cancelled()
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
@@ -248,14 +248,14 @@ jobs:
         files: ${{ env.FIRMWARE }}/*
 
     - name: 删除运行记录
-      uses: GitRML/delete-workflow-runs@main
+      uses: GitRML/delete-workflow-runs@v2
       with:
         retain_days: 1
         keep_minimum_runs: 3
         token: ${{ env.GITHUB_TOKEN }}
 
     - name: 删除自动发布的旧固件
-      uses: dev-drprasad/delete-older-releases@v0.1.0
+      uses: dev-drprasad/delete-older-releases@v0.3.4
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         keep_latest: 6
