@@ -14,8 +14,8 @@ on:
         default: 'iStoreOS'
       enable_wifi:
         description: '启用WiFi'
-        required: true
-        default: true
+        required: false
+        default: false
         type: boolean
       ssh:
         description: 'SSH connection to Actions'
