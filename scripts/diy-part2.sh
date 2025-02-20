@@ -112,8 +112,8 @@ pushd package/community
 #svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-fileassistant
 #Guest-wifi
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi
-mkdir luci-app-guest-wifi
-cp -rf ../../kiddin9/luci-app-guest-wifi/* luci-app-guest-wifi
+# mkdir luci-app-guest-wifi
+# cp -rf ../../kiddin9/luci-app-guest-wifi/* luci-app-guest-wifi
 #Onliner
 mkdir luci-app-onliner
 cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
@@ -122,8 +122,8 @@ cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 #Wolplus（已有Wol）
 # svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-wolplus
 #WiFischedule
-mkdir luci-app-wifischedule
-cp -rf ../../kiddin9/luci-app-wifischedule/* luci-app-wifischedule
+# mkdir luci-app-wifischedule
+# cp -rf ../../kiddin9/luci-app-wifischedule/* luci-app-wifischedule
 #RAMfree
 mkdir luci-app-ramfree
 cp -rf ../../kiddin9/luci-app-ramfree/* luci-app-ramfree
@@ -186,6 +186,8 @@ elif [ "$1" = "rk35xx" ]; then
     $GITHUB_WORKSPACE/scripts/preset-clash-core.sh arm64
 elif [ "$1" = "x86" ]; then
     $GITHUB_WORKSPACE/scripts/preset-clash-core.sh amd64
+elif [ "$1" = "x86-alpha" ]; then
+    $GITHUB_WORKSPACE/scripts/preset-clash-core.sh amd64    
 fi
 
 # 去广告
@@ -282,11 +284,11 @@ echo "
 # 系统相关应用
 CONFIG_PACKAGE_luci-app-poweroff=y
 CONFIG_PACKAGE_luci-app-fileassistant=y
-CONFIG_PACKAGE_luci-app-guest-wifi=y
+# CONFIG_PACKAGE_luci-app-guest-wifi=y
 CONFIG_PACKAGE_luci-app-onliner=y
 CONFIG_PACKAGE_luci-app-eqos=y
 # CONFIG_PACKAGE_luci-app-wolplus=y
-CONFIG_PACKAGE_luci-app-wifischedule=y
+# CONFIG_PACKAGE_luci-app-wifischedule=y
 CONFIG_PACKAGE_luci-app-ramfree=y
 # CONFIG_PACKAGE_luci-app-usb3disable=y
 CONFIG_PACKAGE_luci-app-luci-app-netdata=y
