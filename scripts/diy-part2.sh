@@ -174,10 +174,9 @@ cp -rf ../../kiddin9/luci-app-rtbwmon/* luci-app-rtbwmon
 #VSSR（Hello Word）
 # svn export https://github.com/jerrykuku/lua-maxminddb/trunk lua-maxminddb
 # svn export https://github.com/jerrykuku/luci-app-vssr/trunk luci-app-vssr
-#打开Clash
+#OpenClash
 mkdir luci-app-openclash
 cp -rf ../../kiddin9/luci-app-openclash/* luci-app-openclash
-# cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-openclash/* luci-app-openclash
 #加入打开Clash核心
 chmod -R a+x $GITHUB_WORKSPACE/scripts/preset-clash-core.sh
 if [ "$1" = "rk33xx" ]; then
@@ -190,8 +189,8 @@ elif [ "$1" = "x86-alpha" ]; then
     $GITHUB_WORKSPACE/scripts/preset-clash-core.sh amd64    
 fi
 #homeproxy
-mkdir luci-app-homeproxy
-cp -rf ../../kiddin9/luci-app-homeproxy/* luci-app-homeproxy
+# mkdir luci-app-homeproxy
+# cp -rf ../../kiddin9/luci-app-homeproxy/* luci-app-homeproxy
 
 # 去广告
 #ADGuardHome（kiddin9）
@@ -364,7 +363,7 @@ CONFIG_PACKAGE_luci-app-ssr-plus=y
 
 #Openclash
 CONFIG_PACKAGE_luci-app-openclash=y
-CONFIG_PACKAGE_luci-app-homeproxy=y
+# CONFIG_PACKAGE_luci-app-homeproxy=y
 
 # 去广告应用
 CONFIG_PACKAGE_luci-app-adguardhome=y
@@ -480,7 +479,7 @@ echo "
 echo "
 CONFIG_GRUB_IMAGES=y
 CONFIG_VMDK_IMAGES=y
-CONFIG_ISO_IMAGES=y
+# CONFIG_ISO_IMAGES=y
 CONFIG_QCOW2_IMAGES=y
 " >> .config
 
