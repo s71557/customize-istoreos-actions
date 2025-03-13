@@ -134,6 +134,32 @@ jobs:
     - name: 安装 feeds
       run: cd openwrt && ./scripts/feeds install -a
 
+      # ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ 新增步骤开始 ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+    - name: 修复 Rust 构建配置
+      run: |
+        cd openwrt
+        echo "应用 Rust 配置补丁..."
+        pushd feeds/packages/lang/rust
+          cat > disable_ci_llvm.patch <<'EOF'
+          --- a/config.toml
+          +++ b/config.toml
+          @@ -1,3 +1,6 @@
+          +change-id = 127866
+          +
+           [llvm]
+          +download-ci-llvm = false
+           ninja = true
+          EOF
+          git apply disable_ci_llvm.patch || echo "补丁应用完成"
+        popd
+        echo "已禁用 CI LLVM 下载"
+
+    - name: 强制清理 Rust 缓存
+      run: |
+        cd openwrt
+        rm -rf build_dir/target-*/host/rust*
+    # ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ 新增步骤结束 ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
     - name: 加载自定义配置
       env:
         CONFIG_FILE_PATH: ${{ matrix.ARCHITECTURE }}/${{ env.CONFIG_FILE }}
