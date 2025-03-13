@@ -85,6 +85,8 @@ jobs:
     - name: 初始化编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
+        RUSTUP_HOME: /mnt/workdir/rustup  # 指定独立 Rust 目录
+        CARGO_HOME: /mnt/workdir/cargo
       run: |
         echo "------------------------------- 更新并安装依赖 -------------------------------"
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /etc/mysql /etc/php /usr/local/lib/android /opt/ghc
@@ -104,6 +106,9 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /mnt/workdir
         sudo chown $USER:$GROUPS /mnt/workdir
+        echo "------------------------------- 安装 Rust 工具链------------------------------- "
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable
+        source $CARGO_HOME/env
 
     - name: 克隆源码
       working-directory: /mnt/workdir
@@ -116,7 +121,7 @@ jobs:
       uses: klever1988/cachewrtbuild@main
       with:
         ccache: 'true'
-        mixkey: ${{ matrix.os }}-${{ matrix.ARCHITECTURE }}-${{ matrix.REPO_BRANCH }}
+        mixkey: ${{ matrix.os }}-${{ matrix.ARCHITECTURE }}-${{ matrix.REPO_BRANCH }}-rustfix  # 增加标识
         prefix: ${{ github.workspace }}/openwrt
 
     - name: 加载自定义 feeds
